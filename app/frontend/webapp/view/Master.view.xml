@@ -17,14 +17,14 @@
                 <f:heading>
                     <Title class="wit"
                         id="id.DynamicPageTitleText"
-                        text="Exploration Cockpit"
+                        text="SAPstronaut"
                     />
                 </f:heading>
 
                 <f:expandedContent>
                     <Label class="wit"
                         id="id.DynamicPageTitleSubText"
-                        text="Plan your next exploration mission"
+                        text="Exploring data, reaching new worlds"
                     />
                 </f:expandedContent>
             </f:DynamicPageTitle>
