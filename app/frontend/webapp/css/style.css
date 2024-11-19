@@ -1,12 +1,19 @@
 /* Enter your custom styles here */
 
 .customTitleBackground {
-    background-image: url("./1920x1080.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
+  background-image: url("./1920x1080.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.customDetailBackground {
+  background-image: url("./astro.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
 }
 
 .wit {
-    color: white;
+  color: white;
 }

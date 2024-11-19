@@ -14,20 +14,24 @@
         showFooter="true"
         upperCaseAnchorBar="false"
     >
-        <headerTitle>
+        <headerTitle >
             <!-- <ObjectPageHeader id="_IDGenObjectPageHeader1" objectTitle="{name}" /> -->
             <ObjectPageDynamicHeaderTitle
                 id="_IDGenObjectPageDynamicHeaderTitle1"
+                 class="customDetailBackground"
             >
                 <snappedContent>
                     <m:Title
+                      
                         id="_IDGenTitle10"
                         text="{name} Galaxy"
                         wrapping="true"
+                        class="wit"
                     />
                 </snappedContent>
                 <expandedHeading>
                     <m:Title
+                       class="wit"
                         id="_IDGenTitle11"
                         text="{name}"
                         wrapping="true"
@@ -44,8 +48,9 @@
             </ObjectPageDynamicHeaderTitle>
         </headerTitle>
 
-        <sections>
+        <sections >
             <ObjectPageSection
+            
                 id="_IDGenObjectPageSection"
                 titleUppercase="false"
                 title="Information"
@@ -188,6 +193,7 @@
                 id="_IDGenObjectPageSection1"
                 titleUppercase="false"
                 title="Alien civilisation"
+                class="wit"
             >
                 <subSections>
                     <ObjectPageSubSection
