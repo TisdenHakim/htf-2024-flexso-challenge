@@ -37,36 +37,37 @@
             </f:DynamicPageHeader>
         </f:header>
         <f:content>
-            <Table itemPress="onItemPress" id="galaxytable" items="{/KnownGalaxies}" >
-                <columns>
-                    <Column>
-                        <Text text="Id" />
-                    </Column>
-                    <Column>
-                        <Text text="Name" />
-                    </Column>
-                    <Column>
-                        <Text text="Distance" />
-                    </Column>
-                    <Column>
-                        <Text text="Number of solar systems" />
-                    </Column>
-                    <Column>
-                        <Text text="Avg. PPS" />
-                    </Column>
-                </columns>
-                <items>
-                    <ColumnListItem type="Active">
-                        <cells>
-                            <Text text="{ID}" />
-                            <Text text="{name}" />
-                            <Text text="{distance}" />
-                            <Text text="{numberOfSolarSystems}" />
-                            <Text text="{averagePlanetsPerSolar}" />
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
+            <Table itemPress="onItemPress" id="galaxytable" items="{/KnownGalaxies}">
+            <columns>
+                <Column>
+                    <Text text="Id" />
+                </Column>
+                <Column>
+                    <Text text="Name" />
+                </Column>
+                <Column>
+                    <Text text="Distance" />
+                </Column>
+                <Column>
+                    <Text text="Number of solar systems" />
+                </Column>
+                <Column>
+                    <Text text="Avg. PPS" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Active" press="onItemPress">
+                    <cells>
+                        <Text text="{ID}" />
+                        <Text text="{name}" />
+                        <Text text="{distance}" />
+                        <Text text="{numberOfSolarSystems}" />
+                        <Text text="{averagePlanetsPerSolar}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
         </f:content>        
     </f:DynamicPage>
 </mvc:View>

@@ -3,7 +3,7 @@ import formatter from "../model/formatter";
 import UIComponent from "sap/ui/core/UIComponent";
 import UI5Event from "sap/ui/base/Event";
 import { LayoutType } from "sap/f/library";
-import ListItemBase from "sap/m/ListItemBase";
+import ColumnListItem from "sap/m/ColumnListItem";
 
 
 /**
@@ -30,18 +30,17 @@ export default class Master extends Controller {
   }
 
   public onItemPress(event: UI5Event): void {
-    const item = event.getSource() as ListItemBase;
+    const item = event.getSource() as ColumnListItem;
 
-    // Get the binding context of the clicked item
-    const context = item.getBindingContext();
+    const context = item.getBindingContext(); 
     if (context) {
-      const galaxyId = context.getProperty("GalaxyId");
+      const galaxyId = context.getProperty("ID")
 
-    console.log("Clicked on item with id: " + galaxyId);
+      console.log("Clicked on item with id: " + galaxyId);
 
-    (this.getOwnerComponent() as UIComponent)
-      .getRouter()
-      .navTo("Detail", { GalaxyId: galaxyId,  layout: LayoutType.TwoColumnsMidExpanded });
+      (this.getOwnerComponent() as UIComponent)
+        .getRouter()
+        .navTo("Detail", { GalaxyId: galaxyId, layout: LayoutType.TwoColumnsMidExpanded });
     }
   }
 }
