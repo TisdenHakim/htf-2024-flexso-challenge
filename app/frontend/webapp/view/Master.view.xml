@@ -37,6 +37,28 @@
             </f:DynamicPageHeader>
         </f:header>
         <f:content>
+            <Table >
+                <columns>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Description" />
+                    </Column>
+                    <Column>
+                        <Text text="Status" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{Name}" />
+                            <Text text="{Description}" />
+                            <Text text="{Status}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
         </f:content>
     </f:DynamicPage>
 </mvc:View>
