@@ -1,1 +1,0 @@
-using ExplorationService as service from '../../srv/exploration';
