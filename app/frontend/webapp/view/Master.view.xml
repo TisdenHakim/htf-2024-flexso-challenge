@@ -37,7 +37,7 @@
             </f:DynamicPageHeader>
         </f:header>
         <f:content>
-            <Table >
+            <Table id="galaxytable" items="{/KnownGalaxies}" >
                 <columns>
                     <Column>
                         <Text text="Name" />
@@ -52,9 +52,9 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{Name}" />
-                            <Text text="{Description}" />
-                            <Text text="{Status}" />
+                            <Text text="{ID}" />
+                            <Text text="{name}" />
+                            <Text text="{distance}" />
                         </cells>
                     </ColumnListItem>
                 </items>
