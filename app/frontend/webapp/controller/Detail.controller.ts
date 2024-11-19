@@ -29,4 +29,10 @@ export default class Detail extends Controller {
       .getRouter()
       .navTo("RouteMaster", {});
   }
+
+  public sendRequest(): void {
+
+    process.env.explorationTeamService 
+    console.log("Request sent");
+  }
 }

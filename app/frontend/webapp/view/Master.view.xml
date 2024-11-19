@@ -13,16 +13,16 @@
         title="Mission 108"
     >
         <f:title>
-            <f:DynamicPageTitle id="id.DynamicPageTitle">
+            <f:DynamicPageTitle id="id.DynamicPageTitle" class="customTitleBackground">
                 <f:heading>
-                    <Title
+                    <Title class="wit"
                         id="id.DynamicPageTitleText"
                         text="Exploration Cockpit"
                     />
                 </f:heading>
 
                 <f:expandedContent>
-                    <Label
+                    <Label class="wit"
                         id="id.DynamicPageTitleSubText"
                         text="Plan your next exploration mission"
                     />
@@ -33,41 +33,49 @@
         <f:header>
             <f:DynamicPageHeader id="id.DynamicPageHeader">
                 <f:content>
+                    <Select id="sortSelect" change="onSortChange">
+                        <items>
+                            <core:Item key="name" text="Name" />
+                            <core:Item key="distance" text="Distance" />
+                            <core:Item key="numberOfSolarSystems" text="Number of Solar Systems" />
+                            <core:Item key="averagePlanetsPerSolar" text="Avg. PPS" />
+                        </items>
+                    </Select>
                 </f:content>
             </f:DynamicPageHeader>
         </f:header>
-        <f:content>
-            <Table itemPress="onItemPress" id="galaxytable" items="{/KnownGalaxies}">
-            <columns>
-                <Column>
-                    <Text text="Id" />
-                </Column>
-                <Column>
-                    <Text text="Name" />
-                </Column>
-                <Column>
-                    <Text text="Distance" />
-                </Column>
-                <Column>
-                    <Text text="Number of solar systems" />
-                </Column>
-                <Column>
-                    <Text text="Avg. PPS" />
-                </Column>
-            </columns>
-            <items>
-                <ColumnListItem type="Active" press="onItemPress">
-                    <cells>
-                        <Text text="{ID}" />
-                        <Text text="{name}" />
-                        <Text text="{distance}" />
-                        <Text text="{numberOfSolarSystems}" />
-                        <Text text="{averagePlanetsPerSolar}" />
-                    </cells>
-                </ColumnListItem>
-            </items>
-        </Table>
 
-        </f:content>        
+        <f:content>
+            <Table itemPress="onItemPress" id="galaxytable" items="{/KnownGalaxies}" growing="true" growingThreshold="20">
+                <columns>
+                    <Column>
+                        <Text text="Id" />
+                    </Column>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Distance" />
+                    </Column>
+                    <Column>
+                        <Text text="Number of solar systems" />
+                    </Column>
+                    <Column>
+                        <Text text="Avg. PPS" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" press="onItemPress">
+                        <cells>
+                            <Text text="{ID}" />
+                            <Text text="{name}" />
+                            <Text text="{distance}" />
+                            <Text text="{numberOfSolarSystems}" />
+                            <Text text="{averagePlanetsPerSolar}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
     </f:DynamicPage>
 </mvc:View>

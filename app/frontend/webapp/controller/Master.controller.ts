@@ -4,7 +4,8 @@ import UIComponent from "sap/ui/core/UIComponent";
 import UI5Event from "sap/ui/base/Event";
 import { LayoutType } from "sap/f/library";
 import ColumnListItem from "sap/m/ColumnListItem";
-
+import Sorter from "sap/ui/model/Sorter";
+import ListBinding from "sap/ui/model/ListBinding";
 
 /**
  * @namespace flexso.htf.frontend.frontend.controller
@@ -40,7 +41,15 @@ export default class Master extends Controller {
 
       (this.getOwnerComponent() as UIComponent)
         .getRouter()
-        .navTo("Detail", { GalaxyId: galaxyId, layout: LayoutType.TwoColumnsMidExpanded });
+        .navTo("Detail", { GalaxyId: galaxyId, layout: LayoutType.TwoColumnsBeginExpanded });
     }
+  }
+
+  public onSortChange(event: UI5Event): void {
+    const oTable = this.byId("galaxytable");
+    const sSelectedKey = (event.getSource() as any).getSelectedKey();
+    const oSorter = new Sorter(sSelectedKey, false);
+
+    (oTable?.getBinding("items") as ListBinding)?.sort(oSorter);
   }
 }

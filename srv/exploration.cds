@@ -12,7 +12,10 @@ service ExplorationService {
                 explorationReport,
                 mostCommonStarType,
                 mostCommonPlanetType,
-                mostLikelyAlienType
+                mostLikelyAlienType,
+                numberOfPlanets,
+                baseDrakeScore as drakeEquation,
+                AlienCivilisations : Association to ContactedAlienCivilisations on AlienCivilisations.homeGalaxy.ID = $self.ID
         }
 
     @readonly
@@ -31,14 +34,22 @@ service ExplorationService {
     entity KnownAlienStatus            as projection on datamodel.AlienStatus;
 }
 
-define view DetailedGalaxiesView 
-    as select from datamodel.Galaxies as Galaxies
-    {
+define view DetailedGalaxiesView as
+    select from datamodel.Galaxies as Galaxies {
         key ID,
             name,
             distance,
             numberOfSolarSystems,
             averagePlanetsPerSolar,
+            numberOfSolarSystems * averagePlanetsPerSolar as numberOfPlanets : Double,
+            case
+                when
+                    $self.numberOfPlanets > 100000000000
+                then
+                    1
+                else
+                    0.66
+            end                                           as baseDrakeScore  : Integer,
             explorationReport,
             mostCommonStarType,
             mostCommonPlanetType,
