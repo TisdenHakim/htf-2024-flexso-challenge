@@ -40,13 +40,19 @@
             <Table id="galaxytable" items="{/KnownGalaxies}" >
                 <columns>
                     <Column>
+                        <Text text="Id" />
+                    </Column>
+                    <Column>
                         <Text text="Name" />
                     </Column>
                     <Column>
-                        <Text text="Description" />
+                        <Text text="Distance" />
                     </Column>
                     <Column>
-                        <Text text="Status" />
+                        <Text text="Number of solar systems" />
+                    </Column>
+                    <Column>
+                        <Text text="Avg. PPS" />
                     </Column>
                 </columns>
                 <items>
@@ -55,6 +61,8 @@
                             <Text text="{ID}" />
                             <Text text="{name}" />
                             <Text text="{distance}" />
+                            <Text text="{numberOfSolarSystems}" />
+                            <Text text="{averagePlanetsPerSolar}" />
                         </cells>
                     </ColumnListItem>
                 </items>
