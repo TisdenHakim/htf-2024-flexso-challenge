@@ -17,6 +17,9 @@ service ExplorationService {
                 baseDrakeScore as drakeEquation,
                 AlienCivilisations : Association to ContactedAlienCivilisations on AlienCivilisations.homeGalaxy.ID = $self.ID
         }
+        actions {
+            action decipherMessage( @mandatory message : String) returns String;
+        }
 
     @readonly
     entity ContactedAlienCivilisations as projection on datamodel.AlienCivilisations;
@@ -32,6 +35,8 @@ service ExplorationService {
 
     @readonly
     entity KnownAlienStatus            as projection on datamodel.AlienStatus;
+
+    action sendCommunicationRequest( @mandatory galaxy_ID : String) returns String;
 }
 
 define view DetailedGalaxiesView as
